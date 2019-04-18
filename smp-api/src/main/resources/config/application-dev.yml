@@ -1,0 +1,53 @@
+server:
+  port: 8080
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://lynwood.wunian7yulian.top:3306/liugh?useUnicode=true&characterEncoding=UTF-8
+      username: root
+      password: Zhaowentao123!
+      driver-class-name: com.mysql.jdbc.Driver
+      initial-size: 5
+      max-active: 20
+      min-idle: 5
+      max-wait: 60000
+      pool-prepared-statements: true
+      validation-query: SELECT 1
+      test-on-borrow: false
+      test-on-return: false
+      test-while-idle: true
+      time-between-eviction-runs-millis: 60000
+      min-evictable-idle-time-millis: 300000
+      max-pool-prepared-statement-per-connection-size: 20
+      use-global-data-source-stat: true
+      filters: stat
+      filter:
+        # 慢SQL记录(sql语句执行时间超过某个界限就记录下来)
+        stat:
+          slow-sql-millis: 200
+          log-slow-sql: true
+
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: /druid/*,*.gif,*.png,*.jpg,*.html,*.js,*.css,*.ico
+      stat-view-servlet:
+        enabled: true
+        url-pattern: /druid/*
+        login-username: admin
+        login-password: admin
+        allow:
+        deny:
+mybatis-plus:
+  mapper-locations: classpath*:mapper/xml/*Mapper.xml
+#  mapper-locations: classpath:/com/dyd/ssp/smp/mapper/xml/*Mapper.xml
+  type-aliases-package: com.dyd.ssp.smp.entity
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  config: classpath:config/logback-spring.xml
+  level:
+    root: info
+  path: logs/
+  file: dyd-ssp-smp.log
