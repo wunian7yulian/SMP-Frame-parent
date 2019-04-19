@@ -2,9 +2,9 @@ package com.dyd.ssp.smp.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
-import com.dyd.ssp.smp.aspect.ResultModel;
-import com.dyd.ssp.smp.aspect.ResultUtil;
 import com.dyd.ssp.smp.mapper.UserMapper;
+import com.dyd.ssp.smp.section.advice.handler.ResultModel;
+import com.dyd.ssp.smp.section.advice.handler.ResultUtil;
 import com.dyd.ssp.smp.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
