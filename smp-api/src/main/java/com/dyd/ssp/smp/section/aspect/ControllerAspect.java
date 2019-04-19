@@ -1,9 +1,11 @@
 package com.dyd.ssp.smp.section.aspect;
 
+import com.dyd.ssp.smp.section.annotation.ParamXssPass;
 import com.dyd.ssp.smp.section.annotation.ValidationParam;
 import com.dyd.ssp.smp.section.aspect.handler.AspectApi;
 import com.dyd.ssp.smp.section.aspect.handler.AspectApiBase;
-import com.dyd.ssp.smp.section.aspect.impl.ValidationParamAspect;
+import com.dyd.ssp.smp.section.aspect.specific.ParamXssPassAspect;
+import com.dyd.ssp.smp.section.aspect.specific.ValidationParamAspect;
 import com.dyd.ssp.smp.util.ComUtil;
 import com.dyd.ssp.smp.util.StringUtil;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -39,10 +41,10 @@ public class ControllerAspect {
 //        if (method.isAnnotationPresent(AccessLimit.class)) {
 //            new AccessLimitAspect(aspectApi).doHandlerAspect(pjp,method);
 //        }
-//        //是否需要拦截xss攻击
-//        if(method.isAnnotationPresent( ParamXssPass.class )){
-//           new ParamXssPassAspect(aspectApi).doHandlerAspect(pjp,method);
-//        }
+        //是否需要拦截xss攻击
+        if(method.isAnnotationPresent( ParamXssPass.class )){
+           new ParamXssPassAspect(aspectApi).doHandlerAspect(pjp,method);
+        }
 //        //是否需要记录日志
 //        if(method.isAnnotationPresent(Log.class)){
 //            return new RecordLogAspect(aspectApi).doHandlerAspect(pjp,method);
