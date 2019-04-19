@@ -5,6 +5,7 @@ import com.dyd.ssp.smp.base.BusinessException;
 //import com.liugh.exception.ParamJsonException;
 //import com.liugh.exception.UnauthorizedException;
 import com.dyd.ssp.smp.base.Constant;
+import com.dyd.ssp.smp.exception.ParamJsonException;
 import com.dyd.ssp.smp.section.advice.handler.ResultModel;
 import com.dyd.ssp.smp.section.advice.handler.ResultUtil;
 import org.slf4j.Logger;
@@ -90,16 +91,13 @@ public class ControllerExceptionAdvice {
 //    }
 //
 //
-//    @ResponseStatus(HttpStatus.OK)
-//    @ExceptionHandler(value = ParamJsonException.class)
-//    @ResponseBody
-//    public ResultModel<String> handleParamJsonException(Exception e) {
-//        if(e instanceof ParamJsonException) {
-//            logger.info("参数错误："+e.getMessage());
-//            return ResultUtil.validationFailure("参数错误："+ e.getMessage());
-//        }
-//        return ResultUtil.validationFailure(Constant.ResultType.ERROR);
-//    }
+    @ResponseStatus(HttpStatus.OK)
+    @ExceptionHandler(value = ParamJsonException.class)
+    @ResponseBody
+    public ResultModel<String> handleParamJsonException(ParamJsonException e) {
+        logger.info("参数错误："+e.getMessage());
+        return ResultUtil.validationFailure("参数错误："+ e.getMessage());
+    }
 
 
 }

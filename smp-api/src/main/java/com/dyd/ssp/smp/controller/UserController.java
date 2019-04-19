@@ -5,6 +5,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.dyd.ssp.smp.mapper.UserMapper;
 import com.dyd.ssp.smp.section.advice.handler.ResultModel;
 import com.dyd.ssp.smp.section.advice.handler.ResultUtil;
+import com.dyd.ssp.smp.section.annotation.ValidationParam;
 import com.dyd.ssp.smp.service.IUserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -71,5 +72,24 @@ public class UserController {
     public String test(){
         return "success";
     }
+
+
+    @ApiOperation(value="测试post获取", notes="post请求测试",produces = "application/json")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "requestJson", value = "{\"userName\":\"test\",\"passWord\":\"123\",\"job\":\"职位\"}"
+                    , required = true, dataType = "String",paramType="body")
+    })
+    @PostMapping("/testVP")
+    public Map<String,String> testVP(@ValidationParam("userName,passWord,job")@RequestBody JSONObject requestJson){
+        Map map = new HashMap<String,String>();
+        map.put("msg","success");
+        return map;
+    }
+
+
+
+
+
+
 }
 
