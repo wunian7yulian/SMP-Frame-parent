@@ -9,7 +9,7 @@
 |  druid springboot starter |  无配置简介使用数据源 |
 |  Mybatis-Plus |  ORM  |
 |  Log-back |  日志服务 |
-|  Shiro |  用户授权 |
+|  Security |  用户授权 |
 |  Swagger2  | 接口文档工具 |
 
 
