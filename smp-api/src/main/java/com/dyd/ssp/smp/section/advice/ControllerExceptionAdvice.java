@@ -1,9 +1,6 @@
 package com.dyd.ssp.smp.section.advice;
 
 import com.dyd.ssp.smp.base.BusinessException;
-//import com.liugh.base.Constant.ResultType;
-//import com.liugh.exception.ParamJsonException;
-//import com.liugh.exception.UnauthorizedException;
 import com.dyd.ssp.smp.base.Constant;
 import com.dyd.ssp.smp.exception.ParamJsonException;
 import com.dyd.ssp.smp.section.advice.handler.ResultModel;
@@ -17,8 +14,6 @@ import org.springframework.web.bind.annotation.*;
 
 /**
  * Controller统一异常处理
- * @author : liugh
- * @date : 2018/05/08
  */
 @ControllerAdvice
 public class ControllerExceptionAdvice {
@@ -45,7 +40,7 @@ public class ControllerExceptionAdvice {
     @ExceptionHandler(value = Exception.class)
     public ResultModel<String> errorHandler(Exception ex) {
         ex.printStackTrace();
-        logger.error("接口出现严重异常：{}", ex.getMessage());
+        logger.error("接口出现异常：{}", ex.getMessage());
         return ResultUtil.validationFailure(Constant.ResultType.FAILED);
     }
 
@@ -58,39 +53,12 @@ public class ControllerExceptionAdvice {
     @ResponseBody
     public ResultModel handleBusinessException(BusinessException e) {
         if(e instanceof BusinessException) {
-            logger.info("数据操作失败："+e.getMessage());
-            return ResultUtil.validationFailure("数据操作失败："+e.getMessage());
+            logger.info("操作失败："+e.getMessage());
+            return ResultUtil.validationFailure("操作失败："+e.getMessage());
         }
         return ResultUtil.validationFailure(Constant.ResultType.ERROR);
     }
 
-
-//
-//
-//    /**
-//     * 捕捉UnauthorizedException
-//     * @return
-//     */
-//    @ResponseStatus(HttpStatus.OK)
-//    @ExceptionHandler(UnauthorizedException.class)
-//    @ResponseBody
-//    public ResultModel<String> handleUnauthorized() {
-//        return ResultUtil.validationFailure(Constant.ResultType.USER_NO_PERMITION);
-//    }
-//
-//    /**
-//     * 捕捉shiro的异常
-//     * @param e
-//     * @return
-//     */
-//    @ResponseStatus(HttpStatus.OK)
-//    @ExceptionHandler(ShiroException.class)
-//    @ResponseBody
-//    public ResultModel<String> handleShiroException(ShiroException e) {
-//        return ResultUtil.validationFailure(Constant.ResultType.USER_NO_PERMITION);
-//    }
-//
-//
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler(value = ParamJsonException.class)
     @ResponseBody

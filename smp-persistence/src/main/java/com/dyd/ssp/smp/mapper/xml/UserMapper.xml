@@ -5,14 +5,25 @@
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.dyd.ssp.smp.entity.User">
         <id column="id" property="id" />
-        <result column="mobile" property="mobile" />
-        <result column="user_name" property="userName" />
-        <result column="pass_word" property="passWord" />
-        <result column="unit" property="unit" />
+        <result column="create_by" property="createBy" />
         <result column="create_time" property="createTime" />
+        <result column="update_by" property="updateBy" />
+        <result column="update_time" property="updateTime" />
+        <result column="address" property="address" />
         <result column="avatar" property="avatar" />
+        <result column="description" property="description" />
+        <result column="email" property="email" />
+        <result column="mobile" property="mobile" />
+        <result column="nick_name" property="nickName" />
+        <result column="password" property="password" />
+        <result column="sex" property="sex" />
         <result column="status" property="status" />
-        <result column="job" property="job" />
+        <result column="type" property="type" />
+        <result column="username" property="username" />
+        <result column="del_flag" property="delFlag" />
+        <result column="department_id" property="departmentId" />
+        <result column="street" property="street" />
+        <result column="pass_strength" property="passStrength" />
     </resultMap>
 
 </mapper>

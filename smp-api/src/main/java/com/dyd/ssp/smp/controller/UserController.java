@@ -1,95 +1,31 @@
 package com.dyd.ssp.smp.controller;
 
 
-import com.alibaba.fastjson.JSONObject;
-import com.dyd.ssp.smp.mapper.UserMapper;
 import com.dyd.ssp.smp.section.advice.handler.ResultModel;
 import com.dyd.ssp.smp.section.advice.handler.ResultUtil;
-import com.dyd.ssp.smp.section.annotation.ValidationParam;
-import com.dyd.ssp.smp.service.IUserService;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-import springfox.documentation.annotations.ApiIgnore;
-import java.util.HashMap;
-import java.util.Map;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <p>
- * 用户表 前端控制器
+ *  前端控制器
  * </p>
  *
  * @author zwt
- * @since 2019-04-17
+ * @since 2019-05-06
  */
-@Api(description="用户模块")
-@RestController
-@Slf4j
+@Controller
+@RequestMapping("/user")
 public class UserController {
-
-    @Autowired
-    private IUserService userService;
-
-    @Autowired
-    private UserMapper userMapper;
-
-    @ApiOperation(value="测试get获取", notes="get请求测试下就好")
-    @GetMapping("/testGet")
-    public String testGet(){
-        int all = userMapper.selectByMap(new HashMap<>()).size();
-        return "success";
+    @RequestMapping(value = "/needLogin",method = RequestMethod.GET)
+    @ApiOperation(value = "没有登录")
+    @ResponseBody
+    public ResultModel needLogin(){
+        return ResultUtil.unauthorizedFailure("登录过期,请重新登录");
     }
-
-    @ApiOperation(value="测试post获取", notes="post请求测试",produces = "application/json")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "requestJson", value = "{\"userName\":\"test\",\"passWord\":\"123\"}"
-                    , required = true, dataType = "String",paramType="body")
-    })
-    @PostMapping("/testPost")
-    public Map<String,String> testPost(@RequestBody JSONObject requestJson){
-        Map map = new HashMap<String,String>();
-        map.put("msg","success");
-        return map;
-    }
-
-    @ApiOperation(value="测试post获取 controller 直接返回 rmT ", notes="post请求测试",produces = "application/json")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "requestJson", value = "{\"userName\":\"test\",\"passWord\":\"123\"}"
-                    , required = true, dataType = "String",paramType="body")
-    })
-    @PostMapping("/testPostRMT")
-    public ResultModel<String> testPostReturnRMT(@RequestBody JSONObject requestJson){
-        log.info(requestJson.toJSONString());
-        return ResultUtil.buildResponseModel(requestJson.getString("passWord"));
-    }
-
-    @ApiIgnore
-    @PostMapping("/test")
-    public String test(){
-        return "success";
-    }
-
-
-    @ApiOperation(value="测试post获取", notes="post请求测试",produces = "application/json")
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "requestJson", value = "{\"userName\":\"test\",\"passWord\":\"123\",\"job\":\"职位\"}"
-                    , required = true, dataType = "String",paramType="body")
-    })
-    @PostMapping("/testVP")
-    public Map<String,String> testVP(@ValidationParam("userName,passWord,job")@RequestBody JSONObject requestJson){
-        Map map = new HashMap<String,String>();
-        map.put("msg","success");
-        return map;
-    }
-
-
-
-
-
-
 }
 

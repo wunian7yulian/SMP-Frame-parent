@@ -25,8 +25,8 @@ public class MybatisPlusGenerateCode {
     }
 
     private static void shell(String model){
-        final String[] tableNames = new String[] { "user" };
-        final String url = "jdbc:mysql://lynwood.wunian7yulian.top:3306/liugh?useUnicode=true&characterEncoding=utf8&useSSL=false";
+        final String[] tableNames = new String[] { "t_user_role"};
+        final String url = "jdbc:mysql://lynwood.wunian7yulian.top:3306/smp_2?useUnicode=true&characterEncoding=utf8&useSSL=false";
         final String userName = "root";
         final String passWord = "Zhaowentao123!";
         final String parent = "com.dyd.ssp";
@@ -65,7 +65,7 @@ public class MybatisPlusGenerateCode {
         // 策略配置
         StrategyConfig strategy = new StrategyConfig();
         // strategy.setCapitalMode(true);// 全局大写命名 ORACLE 注意
-        strategy.setTablePrefix(new String[] { "tb_", "m_" });// 此处可以修改为您的表前缀
+        strategy.setTablePrefix(new String[] { "t_", "m_" });// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
         strategy.setInclude(tableNames); // 需要生成的表
         // strategy.setExclude(new String[]{"test"}); // 排除生成的表

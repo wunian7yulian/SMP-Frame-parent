@@ -1,7 +1,8 @@
 package com.dyd.ssp.smp.mapper;
 
-import com.dyd.ssp.smp.entity.User;
+import com.dyd.ssp.smp.entity.Role;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -13,7 +14,7 @@ import java.util.List;
  * @author zwt
  * @since 2019-05-06
  */
-public interface UserMapper extends BaseMapper<User> {
+public interface RoleMapper extends BaseMapper<Role> {
 
-   // List<User> findByUsername(String username);
+    List<Role> findByUserId(@Param("userId")String userId);
 }

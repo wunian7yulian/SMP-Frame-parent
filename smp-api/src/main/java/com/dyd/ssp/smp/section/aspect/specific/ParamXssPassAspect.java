@@ -9,7 +9,6 @@ import java.lang.reflect.Method;
 
 /**
  * 防止xss攻击切面
- * Created by liugh on 2018/10/12.
  */
 public class ParamXssPassAspect extends AspectApiDecorator {
 

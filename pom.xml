@@ -23,7 +23,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <springfox-swagger2.version>2.2.2</springfox-swagger2.version>
+        <springfox-swagger2.version>2.7.0</springfox-swagger2.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
@@ -48,7 +48,7 @@
         <!--加密工具-->
         <scala-bcrypt_2.10.version>2.3</scala-bcrypt_2.10.version>
         <!-- jwt 签名工具 -->
-        <java-jwt.version>3.2.0</java-jwt.version>
+        <jjwt.version>0.9.1</jjwt.version>
         <!-- 模板 工具-->
         <velocity.version>1.7</velocity.version>
         <!-- 文件压缩 -->
@@ -148,9 +148,9 @@
                 <version>${shiro-spring.version}</version>
             </dependency>
             <dependency>
-                <groupId>com.auth0</groupId>
-                <artifactId>java-jwt</artifactId>
-                <version>${java-jwt.version}</version>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jjwt.version}</version>
             </dependency>
             <dependency>
                 <groupId>dom4j</groupId>
@@ -222,6 +222,11 @@
                 <groupId>com.squareup.okhttp3</groupId>
                 <artifactId>okhttp</artifactId>
                 <version>${okhttp.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>4.4.0</version>
             </dependency>
         </dependencies>
 

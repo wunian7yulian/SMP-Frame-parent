@@ -1,0 +1,56 @@
+INSERT INTO `t_permission` VALUES ('999999901', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/common/sendSmsCode', '短信验证码', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999902', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/common/calibrationTime', '时间校准接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999903', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/invit/checkInvitCodeStauts', '判断邀请码是否正确', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999904', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/orgAccount/register', '注册接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999905', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/auth/login', '登录接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999906', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/auth/logout', '登出接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999907', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/scene/getRecommendTempList', '模板推荐列表接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999908', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/scene/getMySceneList', '我的场景模板列表', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999909', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/common/uploadImg', '上传图片接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999910', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/scene/*/createOrUpdate', '场景模板制作/编辑保存', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999911', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/scene/*/getById', '场景模板查询接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999912', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/scene/checkCreated', '检查场景模板是否创建接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999913', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/act/getTempList', '活动模板列表查询接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999914', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/act/getMyTempList', '我的活动模板列表接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999915', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/act/*/createOrUpdate', '活动模板制作/编辑接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999916', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/act/*/deleteById', '删除我的活动接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999917', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/art/*/releaseById', '我的活动生成接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999918', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/stu/getListByName', '学员列表查询接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999919', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/stu/getById', '学员信息查询接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999920', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/stu/updateRemarkById', '学员备注更新接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999921', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/auth/getLoginInfo', '拉取登录信息接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999922', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/auth/changeHeadimgurl', '更换头像接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999923', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/scene/*/getId', '获取对应场景已创建的场景模板的模板ID接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999924', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/act/*/checkCreated', '获取已创建的某活动模板类型的模板ID接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999925', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/act/*/getReleasedAndNotExpiredList', '创建作品选择活动时活动列表接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999926', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/art/*/save', '作品生成', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999927', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/art/*/getReleasedList', '作品列表筛选-活动列表查询接口', '', 1, '', 0, '');
+INSERT INTO `t_permission` VALUES ('999999928', 'admin', '2019-05-10 00:00:00', 0, 'admin', '2019-05-10 00:00:00', '', 'components', '', 1, 1.00, '',
+ '/smp/art/*/*/getListByActId', '商户端作品列表查询接口', '', 1, '', 0, '');
